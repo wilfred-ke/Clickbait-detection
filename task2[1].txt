@@ -1,0 +1,21 @@
+A trivial baseline classifier that flags every text as clickbait without any actual classification will have the following evaluation metrics:
+
+Precision: The number of true positives divided by the total number of predicted positives.
+In this case, it will be 0 because there will be no true positives (all flagged as clickbait) and the denominator will be the total number of samples.
+
+Recall: The number of true positives divided by the total number of actual positives. Again, it will be 0 because there will be no true positives,
+and the denominator will be the total number of actual clickbait samples.
+
+F1-score: The harmonic mean of precision and recall, where both precision and recall are 0. Therefore, the F1-score will also be 0.
+
+This trivial baseline classifier is not effective for real-world clickbait detection because it will flag everything as clickbait without making any actual distinctions.
+To have a more meaningful baseline, you might consider other approaches:
+
+Random Baseline: A random classifier that randomly assigns labels (clickbait or not-clickbait) to samples. While this is still a weak baseline,
+it provides a better comparison than the trivial baseline described above.
+
+Majority Class Baseline: A classifier that always predicts the majority class in the dataset.In this case, it would predict the class that occurs most frequently.
+This can be a more informative baseline as it at least considers the class distribution in the data.
+
+The choice of a baseline depends on the specific problem and dataset. For clickbait detection, the majority class baseline could be a better choice because
+it considers the class distribution and provides a meaningful point of comparison for more advanced models.
